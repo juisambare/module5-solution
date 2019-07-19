@@ -1,0 +1,36 @@
+
+   <fieldset>
+<div ng-show="myInfoCtrl.showSignUpMessage" >
+  Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+  </div>
+  <div ng-if="!myInfoCtrl.showSignUpMessage" >
+    <h1>Hello {{myInfoCtrl.menudata.userData.firstName}} {{myInfoCtrl.menudata.userData.lastName}} !!</h1>
+    <br><br>
+        <div class="menu-item-tile col-md-6 col-lg-6">
+          <b>Here is the information provided by you for registration.</b> <br><br>
+          First Name : {{myInfoCtrl.menudata.userData.firstName}}<br>
+          Last Name  : {{myInfoCtrl.menudata.userData.lastName}}<br>
+          Email      : {{myInfoCtrl.menudata.userData.email}}<br>
+          Phone      : {{myInfoCtrl.menudata.userData.phone}}<br>
+
+        </div>
+
+    <div class="menu-item-tile col-md-6 col-lg-6">
+      <b>Your favorite Dish at our restaurant is :</b><br><br>
+      <div class="row">
+        <div class="col-sm-5">
+          <div class="menu-item-photo">
+            <div>{{myInfoCtrl.menudata.favData.short_name}}</div>
+            <img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtrl.myapipath}}/images/{{myInfoCtrl.menudata.favData.short_name}}.jpg" alt="{{myInfoCtrl.menudata.favData.short_name}}">
+          </div>
+        </div>
+        <div class="menu-item-description col-sm-7">
+          <h3 class="menu-item-title">{{myInfoCtrl.menudata.favData.name}}</h3>
+          <p class="menu-item-details">{{myInfoCtrl.menudata.favData.description}}</p>
+        </div>
+      </div>
+      <hr class="visible-xs">
+    </div>
+
+    </div>
+   </fieldset>
